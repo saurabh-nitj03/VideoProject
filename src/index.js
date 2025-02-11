@@ -4,7 +4,7 @@ import { app } from './app.js';
 import connectDB from "./db/index.js";
 
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
 
 connectDB()
@@ -21,7 +21,9 @@ connectDB()
     console.log("MongoDb connection failed",err);
 })
 
-
+app.get("/",(req,res)=>{
+    res.send("ok");
+})
 // ( async ()=>{
 //    try{
 //     await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
