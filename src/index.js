@@ -21,9 +21,9 @@ connectDB()
     console.log("MongoDb connection failed",err);
 })
 
-app.get("/",(req,res)=>{
-    res.send("ok");
-})
+// app.get("/",(req,res)=>{
+//     res.send("ok");
+// })
 // ( async ()=>{
 //    try{
 //     await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
