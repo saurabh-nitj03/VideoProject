@@ -9,6 +9,6 @@ const tweetSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     }
-}.{timestamps:true})
+},{timestamps:true})
 
 export const Tweet=mongoose.model("Tweet",tweetSchema)

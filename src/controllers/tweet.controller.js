@@ -22,7 +22,7 @@ const addTweet=asyncHandler(async(req,res)=>{
 
 const updateTweet=asyncHandler(async(req,res)=>{
     const {tweetId}=req.params;
-    const tweet = await Tweet.findById(tweetId);
+    const tweets = await Tweet.findById(tweetId);
     if(!tweet){
         throw new ApiError(404,"Tweet does not exist")
     }
@@ -65,7 +65,7 @@ const getUserTweets=asyncHandler(async(req,res)=>{
     const pageNumber=parseInt(page,10);
     const pageLimit=parseInt(limit,10);
 
-    const userId=req.user._id;
+    const userId=req.params;
     const tweets=await Tweet.aggregate([
         {
             $match:{
